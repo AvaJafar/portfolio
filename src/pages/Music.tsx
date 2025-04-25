@@ -1,25 +1,22 @@
 import React from 'react';
 import './Music.css';
-import albumCover1 from '../images/Hotelcalifornia.jpg'; // Hotel California by The Eagles
-import albumCover2 from '../images/ac-dc.jpg'; // Back in Black by AC/DC
-import albumCover3 from '../images/guns-n-roses.webp'; // Appetite for Destruction by Guns N' Roses
 
-const favoriteGenres = ["Rock", "Classic Rock", "Hard Rock", "Blues", "Alternative"];
+const favoriteGenres = ["Rock", "Jazz", "Afrobeats", "Soul", "Folk"];
 const favoriteAlbums = [
-  { title: "Hotel California", artist: "The Eagles", imgSrc: albumCover1 },
-  { title: "Back in Black", artist: "AC/DC", imgSrc: albumCover2 },
-  { title: "Appetite for Destruction", artist: "Guns N' Roses", imgSrc: albumCover3 },
+  { title: "Voulez-Vous", artist: "ABBA", imgSrc: "https://i.imgur.com/Nvc7RyC.jpeg" },
+  { title: "Still Crazy After All These Years", artist: "Paul Simon", imgSrc: "https://i.imgur.com/KaueYOh.jpeg" },
+  { title: "Teatro Lúcido", artist: "La Feeme", imgSrc: "https://i.imgur.com/JgFcOjB.jpeg" },
 ];
 
 const Music: React.FC = () => {
   return (
     <div className="music-page">
       <div className="quote">
-        <p>“Rock and Roll isn’t a genre, it’s a way of life.” 🎸</p>
+        <p>“Without music, life would be a blank to me.”</p>
       </div>
 
       <div className="genre-section">
-        <h3>Explore by Genre</h3>
+        <h3>My Favorite Genres</h3>
         <div className="genres">
           {favoriteGenres.map((genre, index) => (
             <div key={index} className="genre-card" style={{ animationDelay: `${index * 0.2}s` }}>

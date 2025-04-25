@@ -1,44 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ProfileBanner.css';
 import PlayButton from '../components/PlayButton';
 import MoreInfoButton from '../components/MoreInfoButton';
-import { getProfileBanner } from '../queries/getProfileBanner';
-import { ProfileBanner as ProfileBannerType } from '../types';
 
 const ProfileBanner: React.FC = () => {
-
-
-  const [bannerData, setBannerData] = useState<ProfileBannerType | null>(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getProfileBanner();
-      setBannerData(data);
-    }
-    fetchData();
-  }, []);
-
-  if (!bannerData) return <div>Loading...</div>;
+  const resumeLink = "/AvaJafarmadar_Resume.pdf"; // Place your resume PDF in public folder
+  const linkedinLink = "https://www.linkedin.com/in/avajafarmadar/";
+  const headline = "Creative Strategist";
+  const profileSummary =
+    "Ava Jafarmadar is a PR powerhouse meets poetic soul—the kind of communicator who can land a headline by creating culturally significant moments, throw a sold-out launch party, and still find time to catch a Tuesday night improv show in Manhattan. She’s got a strategy mind and a storyteller's heart, blending Gen Z intuition with agency-grade polish. Whether she’s collaborating with a cross-functional team or finding the next unexpected collaboration, Ava brings intention, creativity, and just the right amount of edge. Always five steps ahead, rarely playing it safe—and never, ever off-brand.";
 
   const handlePlayClick = () => {
-    window.open(bannerData.resumeLink.url, '_blank');
+    window.open(resumeLink, '_blank');
   };
 
-  const handleLinkedinClick = () => { 
-    window.open(bannerData.linkedinLink, '_blank');
-  }
+  const handleLinkedinClick = () => {
+    window.open(linkedinLink, '_blank');
+  };
 
   return (
     <div className="profile-banner">
       <div className="banner-content">
-        <h1 className="banner-headline" id='headline'>{bannerData.headline}</h1>
-        <p className="banner-description">
-          {bannerData.profileSummary}
-        </p>
+        <h1 className="banner-headline" id="headline">{headline}</h1>
+        <p className="banner-description">{profileSummary}</p>
 
         <div className="banner-buttons">
           <PlayButton onClick={handlePlayClick} label="Resume" />
-          <MoreInfoButton onClick={handleLinkedinClick} label="Linkedin" />
+          <MoreInfoButton onClick={handleLinkedinClick} label="LinkedIn" />
         </div>
       </div>
     </div>

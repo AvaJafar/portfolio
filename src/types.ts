@@ -58,3 +58,6 @@ export interface Skill {
   description: string;
   icon: string;
 }
+
+// ✅ Shared ProfileType for use across profilePage, TopPicksRow, ContinueWatching
+export type ProfileType = 'recruiter' | 'collaborator' | 'stalker' | 'adventure';

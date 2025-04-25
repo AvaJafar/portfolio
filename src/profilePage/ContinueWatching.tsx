@@ -1,37 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ContinueWatching.css';
-
-type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
+import { ProfileType } from '../types';
 
 interface ContinueWatchingProps {
   profile: ProfileType;
 }
 
-const continueWatchingConfig = {
+const continueWatchingConfig: { [key in ProfileType]: { title: string; imgSrc: string; link: string }[] } = {
   recruiter: [
-    { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
-    { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
+    { title: "Music", imgSrc: "https://i.imgur.com/otBlKg9.jpeg", link: "/music" },
+    { title: "Reading", imgSrc: "https://i.imgur.com/Ft9LSiJ.jpeg", link: "/reading" },
+    { title: "Happy Place", imgSrc: "https://i.imgur.com/ZSUMtli.jpeg", link: "/happy-place" },
+    { title: "Contact Me", imgSrc: "https://i.imgur.com/ESulBMf.jpeg", link: "/contact-me" }
   ],
-  developer: [
-    { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
-    { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
-    { title: "Certifications", imgSrc: "https://picsum.photos/id/1028/300/200", link: "/certifications" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
+  collaborator: [
+    { title: "Music", imgSrc: "https://i.imgur.com/otBlKg9.jpeg", link: "/music" },
+    { title: "Reading", imgSrc: "https://i.imgur.com/Ft9LSiJ.jpeg", link: "/reading" },
+    { title: "Happy Place", imgSrc: "https://i.imgur.com/ZSUMtli.jpeg", link: "/happy-place" },
+    { title: "Contact Me", imgSrc: "https://i.imgur.com/ESulBMf.jpeg", link: "/contact-me" }
   ],
   stalker: [
-    { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
+    { title: "Reading", imgSrc: "https://i.imgur.com/Ft9LSiJ.jpeg", link: "/reading" },
+    { title: "Happy Place", imgSrc: "https://i.imgur.com/ZSUMtli.jpeg", link: "/happy-place" },
+    { title: "Contact Me", imgSrc: "https://i.imgur.com/ESulBMf.jpeg", link: "/contact-me" }
   ],
   adventure: [
-    { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
-    { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Certifications", imgSrc: "https://picsum.photos/id/1028/300/200", link: "/certifications" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
+    { title: "Music", imgSrc: "https://i.imgur.com/otBlKg9.jpeg", link: "/music" },
+    { title: "Reading", imgSrc: "https://i.imgur.com/Ft9LSiJ.jpeg", link: "/reading" },
+    { title: "Happy Place", imgSrc: "https://i.imgur.com/ZSUMtli.jpeg", link: "/happy-place" },
+    { title: "Contact Me", imgSrc: "https://i.imgur.com/ESulBMf.jpeg", link: "/contact-me" }
   ]
 };
 

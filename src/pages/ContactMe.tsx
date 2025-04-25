@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ContactMe.css';
-import profilePic from '../images/sumanth.jpeg';
 import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
-import { ContactMe as IContactMe } from '../types';
-import { getContactMe } from '../queries/getContactMe';
 
 const ContactMe: React.FC = () => {
-
-  const [userData, setUserData] = useState<IContactMe>()
-
-  useEffect(() => {
-    async function fetchUserData() {
-      const data = await getContactMe();
-      setUserData(data);
-    }
-
-    fetchUserData();
-  }, []);
-
-  if (!userData) return <div>Loading...</div>;
+  const userData = {
+    name: "Ava Jafarmadar",
+    title: "Creative Strategist",
+    summary: "Creative strategist bridging brands and culture. I build authentic communities, tell powerful stories, and connect generations through innovative ideas and partnerships.",
+    companyUniversity: (
+      <>
+        University of Florida <span role="img" aria-label="alligator">🐊</span> <strong>Go Gators!</strong>
+      </>
+    ),
+    linkedinLink: "https://www.linkedin.com/in/avajafarmadar/",
+    email: "ava.jafarmadar@gmail.com",
+    phoneNumber: "(954) 854 5626",
+    profilePicture: "https://i.imgur.com/8mp9hKY.jpeg"
+  };
 
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={profilePic} alt="Sumanth Samala" className="badge-avatar" />
+        <img src={userData.profilePicture} alt={userData.name} className="badge-avatar" />
         <div className="badge-content">
-          <h3 className="badge-name">{userData?.name}</h3>
+          <h3 className="badge-name">{userData.name}</h3>
           <p className="badge-title">{userData.title}</p>
-          <p className="badge-description">
-            {userData.summary}
-          </p>
+          <p className="badge-description">{userData.summary}</p>
           <p className="badge-company">{userData.companyUniversity}</p>
           <a
             href={userData.linkedinLink}
@@ -41,9 +37,11 @@ const ContactMe: React.FC = () => {
           </a>
         </div>
       </div>
+
       <div className="contact-header">
-        <p>I'm always up for a chat or a coffee! Feel free to reach out.</p>
+        <p>I'm always up for a chat! Feel free to reach out.</p>
       </div>
+
       <div className="contact-details">
         <div className="contact-item">
           <FaEnvelope className="contact-icon" />

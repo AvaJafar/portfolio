@@ -17,7 +17,7 @@
 
 .reading-intro {
   font-size: 1.1rem;
-  color:white;
+  color: white;
   margin-bottom: 2rem;
 }
 
@@ -32,19 +32,15 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 0.5s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  animation: popUp 2s ease forwards;
 }
 
 .book-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05); /* Zoom-in effect */
-  box-shadow: 0rem 0rem 20rem 20px rgba(211, 29, 29, 0.4)
+  transform: scale(1.05);
+  box-shadow: 0rem 0rem 20rem 20px rgba(211, 29, 29, 0.3);
 }
 
 .book-cover {
@@ -55,23 +51,26 @@
 
 .book-info {
   padding: 1rem;
+  animation: fadeInText 1.2s ease-in-out;
 }
 
 .book-title {
   font-size: 1.2rem;
   color: #333;
   margin: 0.5rem 0;
+  font-weight: 600;
 }
 
 .book-author {
   font-size: 1rem;
-  color: #888;
+  color: #666;
   margin-bottom: 1rem;
 }
 
 .book-description {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
   transition: color 0.3s ease;
 }
 
@@ -85,12 +84,24 @@
   color: #4a90e2;
 }
 
+/* Animations */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
     transform: translateY(20px);
   }
   100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
   }

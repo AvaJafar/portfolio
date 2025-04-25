@@ -1,24 +1,34 @@
 import React from 'react';
 import './Recommendations.css';
-import chrisProfilePic from '../images/chris.jpg'; // Adjust the path based on your directory structure
 
 const Recommendations: React.FC = () => {
   return (
     <div className='timeline-container'>
       <div className="recommendation-card">
-        <div className="recommendation-header">
-          <img src={chrisProfilePic} alt="Chris Smith" className="profile-pic" />
-          <div>
-            <h3>Chris Smith</h3>
-            <p>Head of Kajima Community</p>
-            <p className="date">October 24, 2024</p>
+        <div className="recommendation-header" style={{ flexDirection: 'column', alignItems: 'center' }}>
+          <img src="https://i.imgur.com/XlnJPFB.jpeg" alt="Sianna Peal" className="profile-pic" />
+          <div style={{ textAlign: 'center' }}>
+            <h3>Sianna Peal</h3>
+            <p>Associate Vice President Social & Content / HAVAS Red US</p>
+            <p className="date">April 2025</p>
           </div>
         </div>
         <div className="recommendation-body">
-          <p>✨ "It is with great pleasure that I write this reference for Sumanth, who worked for us as a software developer at Kajima from June 2023. Unfortunately, due to a change in the company’s structure, we have made the difficult decision to make their position redundant. This in no way reflects on their performance, which was consistently excellent.</p>
-          <p>During their time with us, Sumanth demonstrated strong technical expertise, a passion for problem-solving, a willingness to learn, and a collaborative spirit that greatly contributed to our team’s success. They played a pivotal role in developing and maintaining key features of our software <strong>BookingsPlus</strong> and <strong>NHS Open Space</strong>, consistently delivering high-quality code while meeting project deadlines. Their ability to quickly adapt to new technologies and their proactive approach to finding innovative solutions set them apart."</p>
-          <p>💼 "Sumanth also showed exceptional teamwork and communication skills, effectively collaborating with cross-functional teams, including product managers, designers, and QA. Their professionalism, positive attitude, and dedication to their work made them an asset to the team."</p>
-          <p>🌟 "I have no doubt that Sumanth will be a valuable addition to any organization, and I wholeheartedly recommend them for any future opportunities."</p>
+          <p>"Ava has a truly creative mind and consistently delivers innovative, out-of-the-box campaign ideas tailored to each client’s unique needs. She also has a sharp understanding of how to maximize campaign impact even when working within tight constraints like limited budgets or content. This is a rare and valuable skill, also one of the many reasons I love having her on my team."</p>
+        </div>
+      </div>
+
+      <div className="recommendation-card">
+        <div className="recommendation-header" style={{ flexDirection: 'column', alignItems: 'center' }}>
+          <img src="https://i.imgur.com/jVIhtab.jpeg" alt="Hector Mujica" className="profile-pic" />
+          <div style={{ textAlign: 'center' }}>
+            <h3>Hector Mujica</h3>
+            <p>Head of Americas Philanthropy / Google</p>
+            <p className="date">January 2025</p>
+          </div>
+        </div>
+        <div className="recommendation-body">
+          <p>"Ava’s ability to balance bold ideas with structure makes her an incredible asset to any team. She’s organized, strategic, and knows how to rally people around a shared vision. Whether she’s leading a brainstorm or managing the details behind the scenes, Ava’s energy sets the tone. You can feel it in the room—and you see it in the results."</p>
         </div>
       </div>
     </div>

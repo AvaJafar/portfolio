@@ -1,46 +1,72 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Certifications.css';
 import { FaExternalLinkAlt, FaUniversity } from 'react-icons/fa';
-import { SiUdemy, SiCoursera, SiIeee } from 'react-icons/si';
-import { Certification } from '../types';
-import { getCertifications } from '../queries/getCertifications';
-const iconData: { [key: string]: JSX.Element } = {
-  'udemy': <SiUdemy />,
-  'coursera': <SiCoursera />,
-  'ieee': <SiIeee />,
-  'university': <FaUniversity />
-}
+import { SiCoursera } from 'react-icons/si';
+
+const certifications = [
+  {
+    title: "Social Marketing Certification",
+    issuer: "Hootsuite",
+    issuedDate: "September 2021",
+    icon: <SiCoursera />,
+    credentialId: "39325322"
+  },
+  {
+    title: "Hootsuite Platform Certification",
+    issuer: "Hootsuite",
+    issuedDate: "September 2021",
+    icon: <SiCoursera />,
+    credentialId: "39324158"
+  },
+  {
+    title: "Fundamentals of Media Relations",
+    issuer: "Muck Rack",
+    issuedDate: "June 2024",
+    icon: <SiCoursera />,
+    link: "https://verify.skilljar.com/c/6bcd8pom9crb"
+  },
+  {
+    title: "Bachelor of Science in Public Relations",
+    issuer: "University of Florida",
+    issuedDate: "May 2024",
+    icon: <FaUniversity />
+  }
+];
 
 const Certifications: React.FC = () => {
-
-  const [certifications, setCertifications] = useState<Certification[]>([]);
-
-  useEffect(() => { 
-    async function fetchCertifications() {
-      const data = await getCertifications();
-      setCertifications(data);
-    }
-
-    fetchCertifications();
-  }, []);
-
-  if (certifications.length === 0) return <div>Loading...</div>;
-
   return (
     <div className="certifications-container">
       <div className="certifications-grid">
         {certifications.map((cert, index) => (
-          <a href={cert.link} key={index} target="_blank" rel="noopener noreferrer" className="certification-card" style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}>
+          <div
+            key={index}
+            className="certification-card"
+            style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}
+          >
             <div className="certification-content">
-              <div className="certification-icon">{iconData[cert.iconName] || <FaUniversity />}</div>
+              <div className="certification-icon">{cert.icon}</div>
               <h3>{cert.title}</h3>
               <p>{cert.issuer}</p>
-              {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
+              {cert.issuedDate && (
+                <span className="issued-date">Issued {cert.issuedDate}</span>
+              )}
+              {cert.credentialId && (
+                <p className="credential-id">
+                  Credential ID: <strong>{cert.credentialId}</strong>
+                </p>
+              )}
             </div>
-            <div className="certification-link animated-icon">
-              <FaExternalLinkAlt />
-            </div>
-          </a>
+            {cert.link && (
+              <a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="certification-link animated-icon"
+              >
+                <FaExternalLinkAlt />
+              </a>
+            )}
+          </div>
         ))}
       </div>
     </div>

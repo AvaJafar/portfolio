@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './NetflixTitle.css';
 import netflixSound from './netflix-sound.mp3';
 import { useNavigate } from 'react-router-dom';
-import logoImage from '../src/images/logo-2.png'; // Update with the path to your logo
 
 const NetflixTitle = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -11,7 +10,7 @@ const NetflixTitle = () => {
   const handlePlaySound = () => {
     const audio = new Audio(netflixSound);
     audio.play().catch(error => console.error("Audio play error:", error));
-    setIsClicked(true); // Starts animation after clicking
+    setIsClicked(true);
   };
 
   useEffect(() => {
@@ -25,11 +24,24 @@ const NetflixTitle = () => {
 
   return (
     <div className="netflix-container" onClick={handlePlaySound}>
-      <img 
-        src={logoImage} 
-        alt="Custom Logo" 
-        className={`netflix-logo ${isClicked ? 'animate' : ''}`} 
-      />
+      <h1
+        className={`netflix-logo ${isClicked ? 'animate' : ''}`}
+        style={{
+          fontFamily: "'Bebas Neue', sans-serif",
+          fontSize: '64px',
+          color: '#e50914',
+          fontWeight: 'normal',
+          textTransform: 'uppercase',
+          letterSpacing: '3px',
+          textAlign: 'center',
+          textShadow: '0 2px 6px rgba(0, 0, 0, 0.5)',
+          transform: 'scaleY(1.1)',
+          margin: 0,
+          whiteSpace: 'nowrap',
+        }}
+      >
+        AVA JAFARMADAR
+      </h1>
     </div>
   );
 };
