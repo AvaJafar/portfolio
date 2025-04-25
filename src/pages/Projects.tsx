@@ -11,7 +11,7 @@ interface ProjectCard {
 }
 
 const projects: ProjectCard[] = [
-  // ... [your full projects array remains unchanged]
+  // ... your full projects array stays here, unchanged
 ];
 
 const Projects: React.FC = () => {
@@ -33,7 +33,12 @@ const Projects: React.FC = () => {
 
   if (!authenticated) {
     return (
-      <div className="projects-container" style={{ textAlign: 'center', paddingTop: '100px' }}>
+      <div className="projects-container" style={{
+        textAlign: 'center',
+        paddingTop: '100px',
+        backgroundColor: '#141414',
+        minHeight: '100vh'
+      }}>
         <h2 style={{ color: 'white', marginBottom: '1rem' }}>Enter password to view projects</h2>
         <form onSubmit={handleSubmit}>
           <input
@@ -130,7 +135,6 @@ const Projects: React.FC = () => {
                   </div>
                 )}
               </div>
-
               {(project.gallery || project.details) && (
                 <span className="expand-icon" onClick={() => toggleExpand(index)}>
                   {isExpanded ? '–' : '+'}
