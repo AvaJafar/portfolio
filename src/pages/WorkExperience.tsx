@@ -116,7 +116,8 @@ const WorkExperience: React.FC = () => {
             className={`vertical-timeline-element--${item.timelineType}`}
             contentStyle={{ background: '#f2f2f2', color: '#000' }}
             contentArrowStyle={{ borderRight: '7px solid #f2f2f2' }}
-            date={<span style={{ color: '#fff' }}>{item.dateRange}</span>}
+            dateClassName="custom-date"
+            date={item.dateRange}
             iconStyle={{ background: item.timelineType === 'work' ? '#e50914' : '#999', color: '#fff' }}
             icon={item.timelineType === 'work' ? <WorkIcon /> : <SchoolIcon />}
           >
