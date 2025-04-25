@@ -11,7 +11,31 @@ interface ProjectCard {
 }
 
 const projects: ProjectCard[] = [
-  // ... your full projects array stays here, unchanged
+  {
+    title: 'Ordo x Squishmallow',
+    shortDescription:
+      "To introduce UK-based oral care brand Ordo to the U.S. market, I pitched and led the concept for a Squishmallows-branded NYC pop-up—merging fandom with family-friendly utility to spark cultural traction.",
+    image: 'https://i.imgur.com/REuEgZB.png',
+    link: 'https://www.inc.com/annabel-burba/how-a-collaboration-with-squishmallows-helped-this-brand-gain-serious-market-share-fast/91176614',
+    gallery: [
+      { src: "https://i.imgur.com/vOPorM5.png", caption: "Influencer and press invite" },
+      { src: "https://i.imgur.com/vGuRjID.png", caption: "$1 off donated to America’s Tooth Fairy" },
+      { src: "https://i.imgur.com/uVCkfYf.jpeg", caption: "Created layout concept" },
+      { src: "https://i.imgur.com/NWJzck6.jpeg", caption: "Created layout concept" },
+      { src: "https://i.imgur.com/dFCM45Q.jpeg", caption: "Created layout concept" },
+      { src: "https://i.imgur.com/aHuJoj0.png", caption: "Targeted outlets" }
+    ]
+  },
+  {
+    title: 'Victoria Secret PINK',
+    shortDescription:
+      "I helped led the execution of a strategic Valentine’s Day collaboration between PINK and Van Leeuwen...",
+    image: 'https://i.imgur.com/OBnCNKi.png',
+    link: 'https://www.victoriassecret.com/us/vs/vsinsider/events/youre-invited-pink-van-leeuwen',
+    gallery: [
+      { src: "https://i.imgur.com/X54vQyA.png", caption: "PINK x Van Leeuwen takeover" }
+    ]
+  }
 ];
 
 const Projects: React.FC = () => {
@@ -33,13 +57,16 @@ const Projects: React.FC = () => {
 
   if (!authenticated) {
     return (
-      <div className="projects-container" style={{
-        textAlign: 'center',
-        paddingTop: '100px',
+      <div style={{
+        height: '100vh',
         backgroundColor: '#141414',
-        minHeight: '100vh'
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        color: '#fff'
       }}>
-        <h2 style={{ color: 'white', marginBottom: '1rem' }}>Enter password to view projects</h2>
+        <h2>Enter password to view projects</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="password"
