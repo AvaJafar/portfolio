@@ -1,20 +1,17 @@
 // queries/getCertifications.ts
-import datoCMSClient from './datoCMSClient';
+// Removed datoCMSClient-related code
+
 import { Certification } from '../types';
 
-const GET_CERTIFICATIONS = `
-  query {
-    allCertifications {
-      title
-      issuer
-      issuedDate
-      link
-      iconName
-    }
-  }
-`;
-
+// Placeholder mock data or you can connect to another data source later
 export async function getCertifications(): Promise<Certification[]> {
-  const data = await datoCMSClient.request<{ allCertifications: Certification[] }>(GET_CERTIFICATIONS);
-  return data.allCertifications;
+  return [
+    {
+      title: 'Sample Certification',
+      issuer: 'Issuer Name',
+      issuedDate: '2025-01-01',
+      link: 'https://example.com',
+      iconName: 'certificate',
+    },
+  ];
 }

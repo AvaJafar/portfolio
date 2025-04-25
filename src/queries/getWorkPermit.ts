@@ -1,19 +1,13 @@
 // queries/getWorkPermit.ts
-import datoCMSClient from './datoCMSClient';
+// Removed datoCMSClient and returns correctly typed placeholder
+
 import { WorkPermit } from '../types';
 
-const GET_WORK_PERMIT = `
-  query {
-    workPermit {
-      visaStatus
-      expiryDate
-      summary
-      additionalInfo
-    }
-  }
-`;
-
 export async function getWorkPermit(): Promise<WorkPermit> {
-  const data = await datoCMSClient.request<{ workPermit: WorkPermit }>(GET_WORK_PERMIT);
-  return data.workPermit;
+  return {
+    visaStatus: '',
+    expiryDate: new Date(), // ✅ returns a Date object, not a string
+    summary: '',
+    additionalInfo: ''
+  };
 }
