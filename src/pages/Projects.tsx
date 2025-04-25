@@ -14,7 +14,7 @@ const projects: ProjectCard[] = [
   {
     title: 'Ordo x Squishmallow',
     shortDescription:
-      "To introduce UK-based oral care brand Ordo to the U.S. market, I pitched and led the concept for a Squishmallows-branded NYC pop-up—merging fandom with family-friendly utility to spark cultural traction.",
+      "To introduce UK-based oral care brand Ordo to the U.S. market, I pitched and led the concept for a Squishmallows-branded NYC pop-up—merging fandom with family-friendly utility to spark cultural traction. The activation, paired with a partnership with America’s ToothFairy, generated buzz, drove purpose-led engagement, and helped Ordo break into the U.S. market with heart and hype.",
     image: 'https://i.imgur.com/REuEgZB.png',
     link: 'https://www.inc.com/annabel-burba/how-a-collaboration-with-squishmallows-helped-this-brand-gain-serious-market-share-fast/91176614',
     gallery: [
@@ -29,11 +29,39 @@ const projects: ProjectCard[] = [
   {
     title: 'Victoria Secret PINK',
     shortDescription:
-      "I helped led the execution of a strategic Valentine’s Day collaboration between PINK and Van Leeuwen...",
+      "I helped led the execution of a strategic Valentine’s Day collaboration between PINK and Van Leeuwen, transforming the NYC scoop shop into a pink takeover. Designed to position PINK to their target audience consumers through cultural touchpoints they already love, the activation blended experiential marketing with retail theater—driving brand affinity, foot traffic, and social engagement at a key moment for seasonal retail.",
     image: 'https://i.imgur.com/OBnCNKi.png',
     link: 'https://www.victoriassecret.com/us/vs/vsinsider/events/youre-invited-pink-van-leeuwen',
     gallery: [
       { src: "https://i.imgur.com/X54vQyA.png", caption: "PINK x Van Leeuwen takeover" }
+    ]
+  },
+  {
+    title: 'Rosalynn Carter Institute for Caregivers',
+    shortDescription:
+      "RCI champions the health and resilience of America’s 105 million caregivers. I led strategic communications to elevate their national profile, drive policy engagement, and strengthen their stake in public conversations on caregiving.",
+    image: 'https://i.imgur.com/gKXfK55.jpeg',
+    details: [
+      "Shifted the conversation around caregiving through targeted press efforts and partnerships...",
+      "Redefined narratives with the launch of Profiles of Caregiving...",
+      "Amplified voices through strategic podcast placements...",
+      "Navigated a merger with The Carter Center...",
+      "Boosted share of voice by 24%...",
+      "Drove social engagement with 13.8% LinkedIn engagement rate...",
+      "Supported by marquee partnerships with Duke, Bradley Cooper, and Pivotal...",
+      "Secured placements for RCI at major events..."
+    ]
+  },
+  {
+    title: 'NESsT',
+    shortDescription:
+      "NESsT is an impact investing organization that builds and finances mission-driven enterprises creating quality jobs for underrepresented communities while sustaining the planet. I helped position the organization for strategic growth and investor visibility through storytelling that balanced financial rigor with purpose.",
+    image: 'https://i.imgur.com/XjzT19B.jpeg',
+    details: [
+      "Built foundational materials linking NESsT’s work to real-world impact...",
+      "Created steady drumbeat of interviews in top impact outlets...",
+      "Planned storytelling-led press trip to Brazil for funders and press...",
+      "Secured awards including FLII Ignite and ESG Investing recognition..."
     ]
   }
 ];
@@ -57,16 +85,8 @@ const Projects: React.FC = () => {
 
   if (!authenticated) {
     return (
-      <div style={{
-        height: '100vh',
-        backgroundColor: '#141414',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        color: '#fff'
-      }}>
-        <h2>Enter password to view projects</h2>
+      <div className="projects-container" style={{ textAlign: 'center', paddingTop: '100px' }}>
+        <h2 style={{ color: 'white', marginBottom: '1rem' }}>Enter password to view projects</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="password"
