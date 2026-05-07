@@ -1,39 +1,54 @@
 import React from 'react';
 import './Skills.css';
-
 const Skills: React.FC = () => {
   const skillsData = {
-    "Professional Skills": [
-      "Client Relations",
+    "Strategy & Leadership": [
       "Brand Strategy",
-      "Research",
-      "Project Management",
+      "Social Media Strategy",
+      "Content Strategy",
       "Creative Direction",
-      "Event Planning",
+      "Narrative Development",
+      "Campaign Management",
+      "Cross-Functional Leadership",
+      "Client Relations",
+      "Project Management",
       "Public Speaking"
     ],
-    "Industry Tools": [
-      "Muck Rack",
-      "Teams",
-      "Slack",
-      "Meltwater",
-      "Hootsuite",
-      "Canva",
-      "Figma",
-      "Notion",
-      "Google Alerts",
-      "Monday.com",
-      "Asana",
-      "Linktree"
+    "AI & Automation": [
+      "Claude",
+      "ChatGPT",
+      "Zapier",
+      "Airtable",
+      "AI-Assisted Content Workflows",
+      "Prompt Engineering",
+      "Content Operations"
     ],
-    "Computer Software": [
-      "Microsoft Office",
-      "Adobe Suite",
-      "Full Google Suite",
-      "Node.js"
+    "Content & Production": [
+      "CapCut",
+      "Adobe Premiere",
+      "Final Cut Pro",
+      "After Effects",
+      "Photoshop",
+      "Lightroom",
+      "Adobe Creative Suite",
+      "Figma",
+      "Canva"
+    ],
+    "Platforms": [
+      "Instagram",
+      "TikTok",
+      "YouTube",
+      "LinkedIn",
+      "X",
+      "Threads",
+      "Facebook",
+      "Substack"
+    ],
+    "Certifications": [
+      "Meta Certified Creative Strategy Professional",
+      "Hootsuite Certified Social Marketer"
     ]
   };
-
   return (
     <div className="skills-container">
       {Object.entries(skillsData).map(([category, skills]) => (
@@ -51,5 +66,4 @@ const Skills: React.FC = () => {
     </div>
   );
 };
-
 export default Skills;
