@@ -3,28 +3,53 @@ import './Projects.css';
 
 interface ProjectCard {
   title: string;
-  shortDescription: string;
+  shortDescription: React.ReactNode;
   image: string;
   link?: string;
   details?: string[];
   gallery?: { src: string; caption: string }[];
 }
 
+const linkStyle: React.CSSProperties = {
+  color: '#e50914',
+  textDecoration: 'underline',
+  fontWeight: 600
+};
+
 const projects: ProjectCard[] = [
   {
     title: 'Megan Thee Stallion x NBC Olympics x YouTube',
-    shortDescription:
-      "A flagship cross-platform moment marking NBC and YouTube's first major Olympics partnership, anchored by Megan Thee Stallion. I cross-collaborated on concept with the brand team, directed styling, production, and crew, built the shot list and slotted it into the content calendar, reviewed contracts, made real-time edits alongside creative, and led native publishing and cross-platform amplification. The IG post drove 978K likes and 3,715 comments; the long-form YouTube extended the moment beyond a single platform.",
+    shortDescription: (
+      <>
+        A flagship cross-platform moment marking NBC and YouTube's first major Olympics partnership, anchored by Megan Thee Stallion. I cross-collaborated on concept with the brand team, directed styling, production, and crew, built the shot list and slotted it into the content calendar, reviewed contracts, made real-time edits alongside creative, and led native publishing and cross-platform amplification. Watch the long-form YouTube{' '}
+        <a href="https://www.youtube.com/watch?v=zDhTLXSlbpI" target="_blank" rel="noopener noreferrer" style={linkStyle}>here</a>.
+      </>
+    ),
     image: 'https://i.imgur.com/OnP81WL.png',
     link: 'https://www.instagram.com/p/DVBqCw7kdU2/?hl=en&img_index=1',
+    details: [
+      "19 short-form YouTube videos",
+      "4 long-form YouTube videos",
+      "15 in-feed Instagram posts (outside deliverables)",
+      "6 TikToks (outside deliverables)",
+      "10 posts on X",
+      "Anchor IG post: 978K likes, 3,715 comments"
+    ],
     gallery: [
       { src: 'https://i.imgur.com/OnP81WL.png', caption: 'Instagram rollout (978K likes, 3,715 comments)' }
     ]
   },
   {
     title: 'Chicas Divertidas Brand Transformation',
-    shortDescription:
-      "Repositioned Megan Thee Stallion's tequila brand Chicas Divertidas from a graphic-heavy ad account into a lifestyle, culturally relevant brand that lives where its audience already is. Built two distinct content pillars: talent-led moments that capitalize on Megan's cultural pull, and brand-owned storytelling that holds the account's identity in moments without talent. The shift scaled the account from 68K to 88.8K followers in 3 months (+31%) while driving both awareness and measurable sales lift, turning the account into a community, not a billboard.",
+    shortDescription: (
+      <>
+        Repositioned Megan Thee Stallion's tequila brand Chicas Divertidas from a graphic-heavy ad account into a lifestyle, culturally relevant brand that lives where its audience already is. Built two distinct content pillars: talent-led moments that capitalize on Megan's cultural pull, and brand-owned storytelling that holds the account's identity in moments without talent. Examples of talent-led work:{' '}
+        <a href="https://www.instagram.com/p/DVhRnijDsBy/" target="_blank" rel="noopener noreferrer" style={linkStyle}>post one</a>{' '}and{' '}
+        <a href="https://www.instagram.com/p/DWUJZ1wEXb9/" target="_blank" rel="noopener noreferrer" style={linkStyle}>post two</a>. Examples of brand-owned work:{' '}
+        <a href="https://www.instagram.com/p/DXZ5gQ9Ey5s/" target="_blank" rel="noopener noreferrer" style={linkStyle}>post one</a>{' '}and{' '}
+        <a href="https://www.instagram.com/p/DWM9UKEEz4L/" target="_blank" rel="noopener noreferrer" style={linkStyle}>post two</a>. The shift scaled the account from 68K to 88.8K followers in 3 months (+31%) while driving both awareness and measurable sales lift, turning the account into a community, not a billboard.
+      </>
+    ),
     image: 'https://i.imgur.com/Bq5Wfn5.png',
     link: 'https://www.instagram.com/p/DVhRnijDsBy/',
     gallery: [
@@ -43,8 +68,12 @@ const projects: ProjectCard[] = [
   },
   {
     title: 'Ordo x Squishmallow',
-    shortDescription:
-      "To introduce UK-based oral care brand Ordo to the U.S. market, I pitched and led the concept for a Squishmallows-branded NYC pop-up—merging fandom with family-friendly utility to spark cultural traction. The activation, paired with a partnership with America's ToothFairy, generated buzz, drove purpose-led engagement, and helped Ordo break into the U.S. market with heart and hype.",
+    shortDescription: (
+      <>
+        To introduce UK-based oral care brand Ordo to the U.S. market, I pitched and led the concept for a Squishmallows-branded NYC pop-up, merging fandom with family-friendly utility to spark cultural traction. The activation, paired with a partnership with America's ToothFairy, generated buzz, drove purpose-led engagement, and helped Ordo break into the U.S. market with heart and hype. The strategy delivered real category share: Ordo now makes up more than 45% of{' '}
+        <a href="https://www.inc.com/jennifer-conrad/cvs-hopes-its-new-ai-will-be-just-what-doctor-ordered.html" target="_blank" rel="noopener noreferrer" style={linkStyle}>CVS</a>'s children's oral care category despite entering the U.S. market just last fall.
+      </>
+    ),
     image: 'https://i.imgur.com/REuEgZB.png',
     link: 'https://www.inc.com/annabel-burba/how-a-collaboration-with-squishmallows-helped-this-brand-gain-serious-market-share-fast/91176614',
     gallery: [
