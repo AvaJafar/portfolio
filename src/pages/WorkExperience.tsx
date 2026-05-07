@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { MdOutlineWork as WorkIcon } from 'react-icons/md';
 import { IoSchool as SchoolIcon } from 'react-icons/io5';
 import { FaStar as StarIcon } from 'react-icons/fa';
 import './WorkExperience.css';
+
+const BULLET_LIMIT = 4;
 
 const timelineData = [
   {
@@ -65,20 +67,6 @@ const timelineData = [
   },
   {
     timelineType: 'work',
-    name: 'Bemor°',
-    title: 'Event Producer & Brand Strategist',
-    location: 'New York City, NY',
-    summaryPoints: [
-      'Led event coordination for brand launch, attracting 500+ attendees and generating a digital reach of 34 million.',
-      'Executed guerrilla marketing and social content, partnering with influential external organizations.',
-      'Managed activations, timelines, real-time troubleshooting, and seamless operations.',
-      'Monitored event budgets and logistics, ensuring financial alignment.',
-      'Managed an eight-person team, overseeing the creative and strategic development process.'
-    ],
-    dateRange: 'June 2024 – April 2025'
-  },
-  {
-    timelineType: 'work',
     name: 'Century Structures',
     title: 'Project Coordinator',
     location: 'Hollywood, FL',
@@ -88,17 +76,6 @@ const timelineData = [
       'Negotiated vendor contracts, led meetings, and proactively addressed project delays to maintain efficiency.'
     ],
     dateRange: 'September 2023 – January 2024'
-  },
-  {
-    timelineType: 'work',
-    name: 'SUSTY',
-    title: 'Marketing Intern',
-    location: 'Remote',
-    summaryPoints: [
-      'Acted as the first point of contact for proofing and editing work drafted by team.',
-      'Diversified company partnerships by scouting, conducting outreach, and pitching to brands daily.'
-    ],
-    dateRange: 'December 2021 – May 2023'
   },
   {
     timelineType: 'work',
@@ -132,6 +109,51 @@ const timelineData = [
   }
 ];
 
+const TimelineEntry: React.FC<{ item: typeof timelineData[0] }> = ({ item }) => {
+  const [expanded, setExpanded] = useState(false);
+  const needsToggle = item.summaryPoints.length > BULLET_LIMIT;
+  const visiblePoints = expanded || !needsToggle
+    ? item.summaryPoints
+    : item.summaryPoints.slice(0, BULLET_LIMIT);
+
+  return (
+    <VerticalTimelineElement
+      className={`vertical-timeline-element--${item.timelineType}`}
+      contentStyle={{ background: '#f2f2f2', color: '#000' }}
+      contentArrowStyle={{ borderRight: '7px solid #f2f2f2' }}
+      dateClassName="custom-date"
+      date={item.dateRange}
+      iconStyle={{ background: item.timelineType === 'work' ? '#e50914' : '#999', color: '#fff' }}
+      icon={item.timelineType === 'work' ? <WorkIcon /> : <SchoolIcon />}
+    >
+      <h3 className="vertical-timeline-element-title">{item.title}</h3>
+      <h4 className="vertical-timeline-element-subtitle">{item.name}</h4>
+      {item.location && <p><strong>Location:</strong> {item.location}</p>}
+      <ul>
+        {visiblePoints.map((point, i) => (
+          <li key={i}>{point}</li>
+        ))}
+      </ul>
+      {needsToggle && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: '#e50914',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            padding: '4px 0',
+            fontSize: '0.95em'
+          }}
+        >
+          {expanded ? 'Show less ▲' : '... Show more ▼'}
+        </button>
+      )}
+    </VerticalTimelineElement>
+  );
+};
+
 const WorkExperience: React.FC = () => {
   return (
     <>
@@ -140,25 +162,7 @@ const WorkExperience: React.FC = () => {
       </div>
       <VerticalTimeline>
         {timelineData.map((item, index) => (
-          <VerticalTimelineElement
-            key={index}
-            className={`vertical-timeline-element--${item.timelineType}`}
-            contentStyle={{ background: '#f2f2f2', color: '#000' }}
-            contentArrowStyle={{ borderRight: '7px solid #f2f2f2' }}
-            dateClassName="custom-date"
-            date={item.dateRange}
-            iconStyle={{ background: item.timelineType === 'work' ? '#e50914' : '#999', color: '#fff' }}
-            icon={item.timelineType === 'work' ? <WorkIcon /> : <SchoolIcon />}
-          >
-            <h3 className="vertical-timeline-element-title">{item.title}</h3>
-            <h4 className="vertical-timeline-element-subtitle">{item.name}</h4>
-            {item.location && <p><strong>Location:</strong> {item.location}</p>}
-            <ul>
-              {item.summaryPoints.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
-          </VerticalTimelineElement>
+          <TimelineEntry key={index} item={item} />
         ))}
         <VerticalTimelineElement
           iconStyle={{ background: '#16cc52', color: '#fff' }}
