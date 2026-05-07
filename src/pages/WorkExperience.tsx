@@ -9,30 +9,59 @@ import './WorkExperience.css';
 const timelineData = [
   {
     timelineType: 'work',
-    name: 'Collab x Collab',
-    title: 'Independent Creative Strategist',
-    location: 'New York City, NY',
+    name: 'Roc Nation',
+    title: 'Digital Marketing & Strategy Manager',
+    location: 'New York, NY',
     summaryPoints: [
-      'Conceptualized unique brand collabs to drive Gen Z engagement.',
-      'Built creative strategies for three major 2026 campaigns for a leading youth fashion brand.',
-      'Designed visual-first pitch decks and researched cultural trends to shape brand positioning.',
-      'Ideated multi-touchpoint pop-up activations to deepen brand connection.'
+      'Lead daily social strategy and content execution for Megan Thee Stallion across Instagram, TikTok, YouTube, X, Facebook, and Threads, managing a combined audience of 944M+ and growing Instagram from 31.8M to 33M followers in 3 months.',
+      "Scaled Chicas Divertidas Instagram from 68K to 88.8K followers in 3 months (+31%), turning Megan's tequila brand account into a culture-driven community through trend response, IRL moments, and creator-led storytelling.",
+      "Produced and published reactive campaign content tied to Megan Thee Stallion's surprise appearance at Cardi B's show, generating 1.7M+ views and driving measurable lift for a same-night Chicas Divertidas promotion.",
+      "Run social for Roc Nation's flagship channels (2M on IG), spotlighting artists, creators, and tastemakers.",
+      'Led creator partnership for Frito-Lay x Megan Thee Stallion x Nickelback, overseeing concept development, influencer rollout, and cross-functional execution for a multi-platform campaign under tight legal and broadcast timelines.',
+      'Owned social coverage of NBC x YouTube Olympics partnership: 54 platform-native assets across 5 channels in 5 days, capturing live moments and turning them into shareable, on-brand content in real time.',
+      "Direct an external agency of 10 and 3 cross-functional partners across digital, PR, creative, management, and product to launch and scale Megan's brand portfolio: Hot Girl Swim (Walmart), Chicas Divertidas, and the Pete & Thomas Foundation.",
+      'Direct full content production: shoot, edit, on-camera talent, BTS capture, event recaps, memes, and short-form video, working hands-on in CapCut, Premiere, and Adobe Suite.',
+      'Used engagement and retention metrics to refine creative direction and campaign rollouts.',
+      'Developed scalable social and content operations frameworks used across multiple teams to streamline onboarding, preserve institutional knowledge, and standardize creative workflows in a high-growth environment.'
     ],
-    dateRange: 'April 2025 – Present'
+    dateRange: 'January 2025 – Present'
   },
   {
     timelineType: 'work',
-    name: 'Milk & Honey',
-    title: 'Client Executive',
-    location: 'New York City, NY',
+    name: 'CollabxCollab',
+    title: 'Freelance Creative Strategist',
+    location: 'New York, NY',
     summaryPoints: [
-      'Supported the creation of new revenue proposals and participated in presentation and pitch meetings.',
-      'Served as the primary point of contact for clients across five portfolios.',
-      'Initiated and led agency brainstorms, developing multi-touchpoint campaigns.',
-      'Drafted a range of written materials, including press releases, blogs, features, and briefing documents.',
-      'Developed and managed project trackers to ensure efficient progress and execution.'
+      "Lead brand partnership strategy for Fortune 500 clients including Victoria's Secret and Rockefeller Center, identifying culturally relevant niche communities and creators to amplify product launches and place brands in front of their actual target audience.",
+      'Build 360 digital plans for each launch moment: brand and creator pairings, social-first content frameworks, IRL activation tie-ins, and platform-native rollout across IG, TikTok, and emerging channels.',
+      'Translate cultural and audience insight into campaign concepts and visual-first pitch decks, driving ~30%+ engagement growth across activated moments.'
     ],
-    dateRange: 'August 2024 – April 2025'
+    dateRange: 'April 2025 – January 2026'
+  },
+  {
+    timelineType: 'work',
+    name: 'Milk & Honey PR (now Attention Comms)',
+    title: 'Senior Account Executive | Account Executive',
+    location: 'New York, NY',
+    summaryPoints: [
+      'Owned B2C social and B2B LinkedIn strategy for clients, building brand narratives that drove audience growth and strengthened brand reputation.',
+      'Led storytelling and narrative development for brands, turning complex subject matter into accessible content across social, press, and owned channels.',
+      'Produced multimedia content end-to-end: video scripts, op-eds, podcast pitches, infographics, newsletters, and pitch decks, shipping each story to the right audience on the right platform.',
+      'Led messaging and narrative for client launches, campaigns, and reports, directing strategy, creative, and client teams to keep voice and story consistent across every touchpoint.',
+      'Spearheaded new business pitches contributing to ~67% win rate; secured 3–5 top-tier placements per client per quarter.'
+    ],
+    dateRange: 'August 2024 – January 2026'
+  },
+  {
+    timelineType: 'work',
+    name: 'Baobab ESG',
+    title: 'Freelance Social Media Coordinator',
+    location: 'Remote',
+    summaryPoints: [
+      'Produced and published platform-native content across LinkedIn, Instagram, and X, translating dense ESG and impact-investing subject matter into accessible, scroll-stopping social-first storytelling.',
+      'Ran content calendar, copywriting, design direction, and analytics in a fully autonomous capacity, shipping consistent output and reporting performance directly to founders.'
+    ],
+    dateRange: 'June 2023 – July 2024'
   },
   {
     timelineType: 'work',
@@ -97,8 +126,8 @@ const timelineData = [
   {
     timelineType: 'education',
     name: 'University of Florida',
-    title: 'B.S. in Public Relations',
-    summaryPoints: ['Cumulative GPA: 3.74 | Honors: Magna Cum Laude'],
+    title: 'Bachelor of Science, Public Relations',
+    summaryPoints: ['Cumulative GPA: 3.8 | Honors: Magna Cum Laude'],
     dateRange: 'August 2019 – May 2023'
   }
 ];
