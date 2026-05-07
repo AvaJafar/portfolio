@@ -43,10 +43,6 @@ const Skills: React.FC = () => {
       "Threads",
       "Facebook",
       "Substack"
-    ],
-    "Certifications": [
-      "Meta Certified Creative Strategy Professional",
-      "Hootsuite Certified Social Marketer"
     ]
   };
   return (
