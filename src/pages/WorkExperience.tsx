@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { MdOutlineWork as WorkIcon } from 'react-icons/md';
@@ -6,15 +6,21 @@ import { IoSchool as SchoolIcon } from 'react-icons/io5';
 import { FaStar as StarIcon } from 'react-icons/fa';
 import './WorkExperience.css';
 
-const BULLET_LIMIT = 4;
+interface TimelineItem {
+  timelineType: 'work' | 'education';
+  name: string;
+  title: string;
+  location?: string;
+  summaryPoints?: string[];
+  dateRange: string;
+}
 
-const timelineData = [
+const timelineData: TimelineItem[] = [
   {
     timelineType: 'work',
     name: 'Roc Nation',
     title: 'Digital Marketing & Strategy Manager',
     location: 'New York, NY',
-    ],
     dateRange: 'January 2025 – Present'
   },
   {
@@ -22,7 +28,6 @@ const timelineData = [
     name: 'CollabxCollab',
     title: 'Freelance Creative Strategist',
     location: 'New York, NY',
-    ],
     dateRange: 'April 2025 – January 2026'
   },
   {
@@ -30,7 +35,6 @@ const timelineData = [
     name: 'Milk & Honey PR (now Attention Comms)',
     title: 'Senior Account Executive | Account Executive',
     location: 'New York, NY',
-    ],
     dateRange: 'August 2024 – January 2026'
   },
   {
@@ -38,7 +42,6 @@ const timelineData = [
     name: 'Baobab ESG',
     title: 'Freelance Social Media Coordinator',
     location: 'Remote',
-    ],
     dateRange: 'June 2023 – July 2024'
   },
   {
@@ -46,7 +49,6 @@ const timelineData = [
     name: 'Century Structures',
     title: 'Project Coordinator',
     location: 'Hollywood, FL',
-    ],
     dateRange: 'September 2023 – January 2024'
   },
   {
@@ -54,7 +56,6 @@ const timelineData = [
     name: 'Kappa Delta Sorority',
     title: 'Director of Diversity and Inclusion',
     location: 'Gainesville, FL',
-    ],
     dateRange: 'August 2020 – May 2023'
   },
   {
@@ -62,7 +63,6 @@ const timelineData = [
     name: 'Kaleidoscopic Labs',
     title: 'Founder',
     location: 'Miami, FL',
-    ],
     dateRange: 'November 2018 – February 2020'
   },
   {
@@ -74,13 +74,7 @@ const timelineData = [
   }
 ];
 
-const TimelineEntry: React.FC<{ item: typeof timelineData[0] }> = ({ item }) => {
-  const [expanded, setExpanded] = useState(false);
-  const needsToggle = item.summaryPoints.length > BULLET_LIMIT;
-  const visiblePoints = expanded || !needsToggle
-    ? item.summaryPoints
-    : item.summaryPoints.slice(0, BULLET_LIMIT);
-
+const TimelineEntry: React.FC<{ item: TimelineItem }> = ({ item }) => {
   return (
     <VerticalTimelineElement
       className={`vertical-timeline-element--${item.timelineType}`}
@@ -94,26 +88,12 @@ const TimelineEntry: React.FC<{ item: typeof timelineData[0] }> = ({ item }) => 
       <h3 className="vertical-timeline-element-title">{item.title}</h3>
       <h4 className="vertical-timeline-element-subtitle">{item.name}</h4>
       {item.location && <p><strong>Location:</strong> {item.location}</p>}
-      <ul>
-        {visiblePoints.map((point, i) => (
-          <li key={i}>{point}</li>
-        ))}
-      </ul>
-      {needsToggle && (
-        <button
-          onClick={() => setExpanded(!expanded)}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#e50914',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            padding: '4px 0',
-            fontSize: '0.95em'
-          }}
-        >
-          {expanded ? 'Show less ▲' : '... Show more ▼'}
-        </button>
+      {item.summaryPoints && item.summaryPoints.length > 0 && (
+        <ul>
+          {item.summaryPoints.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
       )}
     </VerticalTimelineElement>
   );
