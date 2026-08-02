@@ -1,3 +1,25 @@
+import React, { useState } from 'react';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+
+import { MdOutlineWork as WorkIcon } from 'react-icons/md';
+import { IoSchool as SchoolIcon } from 'react-icons/io5';
+import { FaStar as StarIcon, FaChevronDown } from 'react-icons/fa';
+
+import './WorkExperience.css';
+
+interface TimelineItem {
+  timelineType: 'work' | 'education';
+  name: string;
+  title: string;
+  location?: string;
+  summaryPoints?: string[];
+  dateRange: string;
+}
+
 const timelineData: TimelineItem[] = [
   {
     timelineType: 'work',
@@ -64,6 +86,39 @@ const timelineData: TimelineItem[] = [
     ]
   },
   {
+    timelineType: 'work',
+    name: 'Century Structures',
+    title: 'Project Coordinator',
+    location: 'Hollywood, FL',
+    dateRange: 'September 2023 – January 2024',
+    summaryPoints: [
+      'Coordinated project timelines, documentation, and communications across internal teams, vendors, and external stakeholders.',
+      'Supported day-to-day project operations by tracking deliverables, organizing materials, and helping teams meet key deadlines.'
+    ]
+  },
+  {
+    timelineType: 'work',
+    name: 'Kappa Delta Sorority',
+    title: 'Director of Diversity and Inclusion',
+    location: 'Gainesville, FL',
+    dateRange: 'August 2020 – May 2023',
+    summaryPoints: [
+      'Led diversity and inclusion initiatives designed to strengthen belonging, representation, and cultural awareness across the organization.',
+      'Developed educational programming, facilitated conversations, and collaborated with leadership on inclusive member experiences.'
+    ]
+  },
+  {
+    timelineType: 'work',
+    name: 'Kaleidoscopic Labs',
+    title: 'Founder',
+    location: 'Miami, FL',
+    dateRange: 'November 2018 – February 2020',
+    summaryPoints: [
+      'Founded and developed an early-stage creative business, overseeing brand strategy, marketing, operations, and customer relationships.',
+      'Built the brand identity and managed day-to-day execution from concept development through promotion and delivery.'
+    ]
+  },
+  {
     timelineType: 'education',
     name: 'University of Florida',
     title: 'Bachelor of Science, Public Relations',
@@ -71,6 +126,127 @@ const timelineData: TimelineItem[] = [
     dateRange: 'August 2019 – May 2023',
     summaryPoints: [
       'Graduated Magna Cum Laude with a 3.8 cumulative GPA.',
+      'Concentration in Event Management.'
+    ]
+  }
+];
+
+const TimelineEntry: React.FC<{ item: TimelineItem }> = ({ item }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const hasSummaryPoints =
+    item.summaryPoints && item.summaryPoints.length > 0;
+
+  const detailsId = `${item.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')}-details`;
+
+  return (
+    <VerticalTimelineElement
+      className={`vertical-timeline-element--${item.timelineType}`}
+      contentStyle={{
+        background: '#f2f2f2',
+        color: '#000'
+      }}
+      contentArrowStyle={{
+        borderRight: '7px solid #f2f2f2'
+      }}
+      dateClassName="custom-date"
+      date={item.dateRange}
+      iconStyle={{
+        background:
+          item.timelineType === 'work' ? '#e50914' : '#999',
+        color: '#fff'
+      }}
+      icon={
+        item.timelineType === 'work'
+          ? <WorkIcon />
+          : <SchoolIcon />
+      }
+    >
+      <h3 className="vertical-timeline-element-title">
+        {item.title}
+      </h3>
+
+      <h4 className="vertical-timeline-element-subtitle">
+        {item.name}
+      </h4>
+
+      {item.location && (
+        <p className="experience-location">
+          <strong>Location:</strong> {item.location}
+        </p>
+      )}
+
+      {hasSummaryPoints && (
+        <>
+          <button
+            type="button"
+            className="experience-toggle"
+            onClick={() => setIsOpen((currentState) => !currentState)}
+            aria-expanded={isOpen}
+            aria-controls={detailsId}
+          >
+            <span>
+              {isOpen ? 'Hide experience' : 'View experience'}
+            </span>
+
+            <FaChevronDown
+              className={`experience-chevron ${
+                isOpen ? 'open' : ''
+              }`}
+              aria-hidden="true"
+            />
+          </button>
+
+          {isOpen && (
+            <ul
+              id={detailsId}
+              className="experience-details"
+            >
+              {item.summaryPoints?.map((point, index) => (
+                <li key={`${item.name}-${index}`}>
+                  {point}
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
+      )}
+    </VerticalTimelineElement>
+  );
+};
+
+const WorkExperience: React.FC = () => {
+  return (
+    <>
+      <div className="timeline-container">
+        <h2 className="timeline-title">
+          Work Experience & Education
+        </h2>
+      </div>
+
+      <VerticalTimeline>
+        {timelineData.map((item) => (
+          <TimelineEntry
+            key={`${item.name}-${item.dateRange}`}
+            item={item}
+          />
+        ))}
+
+        <VerticalTimelineElement
+          iconStyle={{
+            background: '#16cc52',
+            color: '#fff'
+          }}
+          icon={<StarIcon />}
+        />
+      </VerticalTimeline>
+    </>
+  );
+};
+
+export default WorkExperience;
       'Concentration in Event Management.'
     ]
   }
