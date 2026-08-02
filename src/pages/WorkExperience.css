@@ -1,43 +1,54 @@
-.vertical-timeline-element-content {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.experience-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 0;
+  border: none;
+  border-top: 1px solid #d4d4d4;
+  background: transparent;
+  color: #e50914;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
 }
 
-.vertical-timeline-element-content:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.experience-toggle:hover {
+  color: #b20710;
 }
 
-.timeline-container {
-  text-align: center;
-  padding: 20px;
-  margin-top: 5rem;
+.experience-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
 }
 
-.timeline-title {
-  font-size: 2rem;
-  color: #fff;
-  font-weight: bold;
-  margin-bottom: 40px;
-  display: inline-block;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 2s ease-in-out both;
+.experience-chevron.open {
+  transform: rotate(180deg);
 }
 
-/* Keyframes for fade-in animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.experience-details {
+  margin: 12px 0 0;
+  padding-left: 22px;
 }
 
-/* ✅ Make timeline dates white */
-.custom-date {
-  color: white !important;
+.experience-details li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.experience-details li:last-child {
+  margin-bottom: 0;
+}
+
+.experience-toggle:focus-visible {
+  outline: 2px solid #e50914;
+  outline-offset: 4px;
+}
+
+.experience-location {
+  margin-bottom: 0;
 }
