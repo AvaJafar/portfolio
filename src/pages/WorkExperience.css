@@ -52,3 +52,11 @@
 .experience-location {
   margin-bottom: 0;
 }
+
+/* Makes all timeline dates visible on the black background */
+.custom-date,
+.vertical-timeline-element-date,
+.vertical-timeline-element .vertical-timeline-element-date {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
