@@ -7,7 +7,10 @@ import 'react-vertical-timeline-component/style.min.css';
 
 import { MdOutlineWork as WorkIcon } from 'react-icons/md';
 import { IoSchool as SchoolIcon } from 'react-icons/io5';
-import { FaStar as StarIcon, FaChevronDown } from 'react-icons/fa';
+import {
+  FaStar as StarIcon,
+  FaChevronDown
+} from 'react-icons/fa';
 
 import './WorkExperience.css';
 
@@ -131,11 +134,13 @@ const timelineData: TimelineItem[] = [
   }
 ];
 
-const TimelineEntry: React.FC<{ item: TimelineItem }> = ({ item }) => {
+const TimelineEntry: React.FC<{ item: TimelineItem }> = ({
+  item
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const hasSummaryPoints =
-    item.summaryPoints && item.summaryPoints.length > 0;
+    Boolean(item.summaryPoints?.length);
 
   const detailsId = `${item.name
     .toLowerCase()
@@ -155,7 +160,9 @@ const TimelineEntry: React.FC<{ item: TimelineItem }> = ({ item }) => {
       date={item.dateRange}
       iconStyle={{
         background:
-          item.timelineType === 'work' ? '#e50914' : '#999',
+          item.timelineType === 'work'
+            ? '#e50914'
+            : '#999',
         color: '#fff'
       }}
       icon={
@@ -183,12 +190,16 @@ const TimelineEntry: React.FC<{ item: TimelineItem }> = ({ item }) => {
           <button
             type="button"
             className="experience-toggle"
-            onClick={() => setIsOpen((currentState) => !currentState)}
+            onClick={() =>
+              setIsOpen((currentState) => !currentState)
+            }
             aria-expanded={isOpen}
             aria-controls={detailsId}
           >
             <span>
-              {isOpen ? 'Hide experience' : 'View experience'}
+              {isOpen
+                ? 'Hide experience'
+                : 'View experience'}
             </span>
 
             <FaChevronDown
@@ -204,11 +215,13 @@ const TimelineEntry: React.FC<{ item: TimelineItem }> = ({ item }) => {
               id={detailsId}
               className="experience-details"
             >
-              {item.summaryPoints?.map((point, index) => (
-                <li key={`${item.name}-${index}`}>
-                  {point}
-                </li>
-              ))}
+              {item.summaryPoints?.map(
+                (point, index) => (
+                  <li key={`${item.name}-${index}`}>
+                    {point}
+                  </li>
+                )
+              )}
             </ul>
           )}
         </>
@@ -247,7 +260,3 @@ const WorkExperience: React.FC = () => {
 };
 
 export default WorkExperience;
-      'Concentration in Event Management.'
-    ]
-  }
-];
