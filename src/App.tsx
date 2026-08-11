@@ -7,7 +7,8 @@ import WorkPermit from './pages/WorkPermit';
 import WorkExperience from './pages/WorkExperience';
 import Recommendations from './pages/Recommendations';
 import Skills from './pages/Skills';
-import Projects from './pages/Projects';
+import ProjectsPage from './pages/projects/ProjectsPage';
+import ProjectDetailPage from './pages/projects/ProjectDetailPage';
 import ContactMe from './pages/ContactMe';
 import Layout from './Layout';
 import Music from './pages/Music';
@@ -26,7 +27,8 @@ const App: React.FC = () => {
       <Route path="/work-experience" element={<Layout><WorkExperience /></Layout>} />
       <Route path="/recommendations" element={<Layout><Recommendations /></Layout>} />
       <Route path="/skills" element={<Layout><Skills /></Layout>} />
-      <Route path="/projects" element={<Layout><Projects /></Layout>} />
+      <Route path="/projects" element={<Layout><ProjectsPage /></Layout>} />
+      <Route path="/projects/:slug" element={<Layout><ProjectDetailPage /></Layout>} />
       <Route path="/contact-me" element={<Layout><ContactMe /></Layout>} />
       <Route path="/music" element={<Layout><Music /></Layout>} />
       <Route path="/reading" element={<Layout><Reading /></Layout>} />
