@@ -1,0 +1,16 @@
+:root {
+  --proj-bg: #0c0b0a;
+  --proj-bg-raised: #161311;
+  --proj-bg-card: #1c1917;
+  --proj-ink: #f3ede2;
+  --proj-ink-dim: #a89f8f;
+  --proj-ink-faint: #6b6459;
+  --proj-accent: #c99a3f;
+  --proj-accent-bright: #e0b559;
+  --proj-accent-dim: #8a6b2c;
+  --proj-line: rgba(243, 237, 226, 0.12);
+  --proj-line-strong: rgba(243, 237, 226, 0.22);
+  --proj-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --proj-display: 'Bricolage Grotesque', 'Archivo', sans-serif;
+  --proj-ui: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+}

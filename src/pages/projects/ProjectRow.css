@@ -1,73 +1,50 @@
+@import './tokens.css';
+
 .project-row {
-  margin: 0 0 56px;
-  padding: 0 3.5vw;
+  padding: 34px 0;
+  scroll-margin-top: 76px;
 }
 
-.project-row-title {
-  font-size: 1.35rem;
+.project-row-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 0 clamp(20px, 4vw, 48px);
+  margin-bottom: 16px;
+}
+
+.project-row-head h2 {
+  font-family: var(--proj-display);
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #fff;
-  margin: 0 0 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--proj-ink);
 }
 
-.project-row-viewport {
-  position: relative;
+.project-row-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--proj-line);
+}
+
+.project-row-count {
+  font-family: var(--proj-ui);
+  font-size: 0.72rem;
+  color: var(--proj-ink-faint);
+  font-variant-numeric: tabular-nums;
 }
 
 .project-row-track {
   display: flex;
-  gap: 8px;
+  gap: 14px;
   overflow-x: auto;
-  overflow-y: visible;
+  padding: 4px clamp(20px, 4vw, 48px) 18px;
   scroll-behavior: smooth;
-  padding: 20px 0 32px;
   scrollbar-width: none;
 }
 
 .project-row-track::-webkit-scrollbar {
   display: none;
-}
-
-.project-row-nav {
-  position: absolute;
-  top: 0;
-  bottom: 32px;
-  width: 44px;
-  border: none;
-  background: rgba(20, 20, 20, 0.55);
-  color: #fff;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 30;
-  opacity: 0;
-  transition: opacity 0.2s ease, background 0.2s ease;
-}
-
-.project-row-viewport:hover .project-row-nav {
-  opacity: 1;
-}
-
-.project-row-nav:hover {
-  background: rgba(20, 20, 20, 0.85);
-}
-
-.project-row-nav.left {
-  left: 0;
-}
-
-.project-row-nav.right {
-  right: 0;
-}
-
-@media (max-width: 640px) {
-  .project-row {
-    padding: 0 4vw;
-  }
-
-  .project-row-nav {
-    display: none;
-  }
 }

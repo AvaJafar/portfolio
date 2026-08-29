@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ProjectsHero from './ProjectsHero';
+import CategoryNav from './CategoryNav';
 import ProjectRow from './ProjectRow';
-import { GENRES, projects, getProjectsByGenre } from './data';
+import { CATEGORIES, getProjectsByCategory, categorySlug } from './data';
 import { isProjectsUnlocked, unlockProjects } from './projectAuth';
 import './ProjectsPage.css';
 
@@ -39,14 +39,20 @@ const ProjectsPage: React.FC = () => {
     );
   }
 
-  const featured = projects.find((p) => p.featured) || projects[0];
-
   return (
     <div className="projects-page">
-      <ProjectsHero project={featured} />
+      <CategoryNav />
+      <div className="projects-intro">
+        <h1>My Projects</h1>
+        <p>
+          <strong>Multi-Brand Strategist.</strong> I build audiences and turn cultural attention into
+          commercial outcomes. Years across entertainment, retail, CPG, beauty, tech, and nonprofit
+          narrative work. Watch my work!
+        </p>
+      </div>
       <div className="project-rows">
-        {GENRES.map((genre) => (
-          <ProjectRow key={genre} title={genre} projects={getProjectsByGenre(genre)} />
+        {CATEGORIES.map((cat) => (
+          <ProjectRow key={cat} id={categorySlug(cat)} title={cat} projects={getProjectsByCategory(cat)} />
         ))}
       </div>
     </div>
