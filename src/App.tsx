@@ -12,10 +12,7 @@ import ProjectDetailPage from './pages/projects/ProjectDetailPage';
 import ContactMe from './pages/ContactMe';
 import Layout from './Layout';
 import Music from './pages/Music';
-import Reading from './pages/Reading';
-import Blogs from './pages/Blogs';
 import Certifications from './pages/Certifications';
-import HappyPlace from './pages/HappyPlace'; // ✅ New addition
 
 const App: React.FC = () => {
   return (
@@ -31,10 +28,7 @@ const App: React.FC = () => {
       <Route path="/projects/:slug" element={<Layout><ProjectDetailPage /></Layout>} />
       <Route path="/contact-me" element={<Layout><ContactMe /></Layout>} />
       <Route path="/music" element={<Layout><Music /></Layout>} />
-      <Route path="/reading" element={<Layout><Reading /></Layout>} />
-      <Route path="/blogs" element={<Layout><Blogs /></Layout>} />
       <Route path="/certifications" element={<Layout><Certifications /></Layout>} />
-      <Route path="/happy-place" element={<Layout><HappyPlace /></Layout>} /> {/* ✅ New route */}
     </Routes>
   );
 };

@@ -10,25 +10,18 @@ interface ContinueWatchingProps {
 const continueWatchingConfig: { [key in ProfileType]: { title: string; imgSrc: string; link: string }[] } = {
   recruiter: [
     { title: "Music", imgSrc: "https://i.imgur.com/otBlKg9.jpeg", link: "/music" },
-    { title: "Reading", imgSrc: "https://i.imgur.com/Ft9LSiJ.jpeg", link: "/reading" },
-    { title: "Happy Place", imgSrc: "https://i.imgur.com/ZSUMtli.jpeg", link: "/happy-place" },
     { title: "Contact Me", imgSrc: "https://i.imgur.com/ESulBMf.jpeg", link: "/contact-me" }
   ],
   collaborator: [
     { title: "Music", imgSrc: "https://i.imgur.com/otBlKg9.jpeg", link: "/music" },
-    { title: "Reading", imgSrc: "https://i.imgur.com/Ft9LSiJ.jpeg", link: "/reading" },
-    { title: "Happy Place", imgSrc: "https://i.imgur.com/ZSUMtli.jpeg", link: "/happy-place" },
     { title: "Contact Me", imgSrc: "https://i.imgur.com/ESulBMf.jpeg", link: "/contact-me" }
   ],
   stalker: [
-    { title: "Reading", imgSrc: "https://i.imgur.com/Ft9LSiJ.jpeg", link: "/reading" },
-    { title: "Happy Place", imgSrc: "https://i.imgur.com/ZSUMtli.jpeg", link: "/happy-place" },
+    { title: "Music", imgSrc: "https://i.imgur.com/otBlKg9.jpeg", link: "/music" },
     { title: "Contact Me", imgSrc: "https://i.imgur.com/ESulBMf.jpeg", link: "/contact-me" }
   ],
   adventure: [
     { title: "Music", imgSrc: "https://i.imgur.com/otBlKg9.jpeg", link: "/music" },
-    { title: "Reading", imgSrc: "https://i.imgur.com/Ft9LSiJ.jpeg", link: "/reading" },
-    { title: "Happy Place", imgSrc: "https://i.imgur.com/ZSUMtli.jpeg", link: "/happy-place" },
     { title: "Contact Me", imgSrc: "https://i.imgur.com/ESulBMf.jpeg", link: "/contact-me" }
   ]
 };
