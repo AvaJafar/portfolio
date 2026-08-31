@@ -40,6 +40,19 @@
   opacity: 1;
 }
 
+.gallery-credit {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 4;
+  font-family: var(--proj-ui);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--proj-ink-dim);
+  background: rgba(12, 11, 10, 0.6);
+  padding: 4px 8px;
+}
+
 .gallery-nav {
   position: absolute;
   top: 50%;

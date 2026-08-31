@@ -30,8 +30,13 @@ export interface LinkItem {
   url: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  credit?: string;
+}
+
 export interface GalleryBlock {
-  images: string[];
+  images: GalleryImage[];
   caption?: string;
   style?: 'default' | 'iphone';
 }
@@ -142,14 +147,14 @@ export const projects: ProjectItem[] = [
       style: 'default',
       caption: 'Brooklyn & Manhattan pop-up activations',
       images: [
-        '/media/jay-z30/popup-1.jpg',
-        '/media/jay-z30/popup-2.jpg',
-        '/media/jay-z30/popup-3.jpg',
-        '/media/jay-z30/popup-4.jpg',
-        '/media/jay-z30/popup-5.jpg',
-        '/media/jay-z30/popup-6.jpg',
-        '/media/jay-z30/popup-7.jpg',
-        '/media/jay-z30/popup-8.jpg'
+        { src: '/media/jay-z30/popup-1.jpg', credit: 'Olympia Shannon' },
+        { src: '/media/jay-z30/popup-2.jpg', credit: 'Olympia Shannon' },
+        { src: '/media/jay-z30/popup-3.jpg', credit: 'Olympia Shannon' },
+        { src: '/media/jay-z30/popup-4.jpg', credit: 'Olympia Shannon' },
+        { src: '/media/jay-z30/popup-5.jpg', credit: 'Olympia Shannon' },
+        { src: '/media/jay-z30/popup-6.jpg', credit: 'Shareif Ziyadat' },
+        { src: '/media/jay-z30/popup-7.jpg', credit: 'Shareif Ziyadat' },
+        { src: '/media/jay-z30/popup-8.jpg', credit: 'Evan Felts' }
       ]
     },
     intro: 'Thirty years of catalog, told as one cohesive citywide narrative instead of scattered nostalgia.',
@@ -379,15 +384,15 @@ export const projects: ProjectItem[] = [
       style: 'iphone',
       caption: 'The Van Leeuwen partnership, as it played out on Instagram',
       images: [
-        '/media/vs-pink/ig-1.jpg',
-        '/media/vs-pink/ig-2.jpg',
-        '/media/vs-pink/ig-3.jpg',
-        '/media/vs-pink/ig-4.jpg',
-        '/media/vs-pink/ig-5.jpg',
-        '/media/vs-pink/ig-6.jpg',
-        '/media/vs-pink/ig-7.jpg',
-        '/media/vs-pink/ig-8.jpg',
-        '/media/vs-pink/ig-9.jpg'
+        { src: '/media/vs-pink/ig-1.jpg' },
+        { src: '/media/vs-pink/ig-2.jpg' },
+        { src: '/media/vs-pink/ig-3.jpg' },
+        { src: '/media/vs-pink/ig-4.jpg' },
+        { src: '/media/vs-pink/ig-5.jpg' },
+        { src: '/media/vs-pink/ig-6.jpg' },
+        { src: '/media/vs-pink/ig-7.jpg' },
+        { src: '/media/vs-pink/ig-8.jpg' },
+        { src: '/media/vs-pink/ig-9.jpg' }
       ]
     },
     intro: "Turning a Tribeca ice cream shop into a Valentine's Day destination built for Gen Z discovery.",

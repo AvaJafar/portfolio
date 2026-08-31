@@ -41,8 +41,8 @@ const GallerySection: React.FC<GallerySectionProps> = ({ gallery }) => {
         <div className="iphone-frame">
           <div className="iphone-notch" />
           <div className="iphone-screen">
-            {gallery.images.map((src, i) => (
-              <img key={src} src={src} alt="" className={i === index ? 'visible' : ''} />
+            {gallery.images.map((img, i) => (
+              <img key={img.src} src={img.src} alt="" className={i === index ? 'visible' : ''} />
             ))}
           </div>
           <div className="iphone-home-indicator" />
@@ -57,6 +57,8 @@ const GallerySection: React.FC<GallerySectionProps> = ({ gallery }) => {
     );
   }
 
+  const currentCredit = gallery.images[index]?.credit;
+
   return (
     <div className="gallery-default-wrap">
       <div className="gallery-default-viewport">
@@ -64,9 +66,10 @@ const GallerySection: React.FC<GallerySectionProps> = ({ gallery }) => {
           <button className="gallery-nav left" onClick={prev} aria-label="Previous">‹</button>
         )}
         <div className="gallery-default-image-wrap">
-          {gallery.images.map((src, i) => (
-            <img key={src} src={src} alt="" className={i === index ? 'visible' : ''} />
+          {gallery.images.map((img, i) => (
+            <img key={img.src} src={img.src} alt="" className={i === index ? 'visible' : ''} />
           ))}
+          {currentCredit && <div className="gallery-credit">Credit: {currentCredit}</div>}
         </div>
         {total > 1 && (
           <button className="gallery-nav right" onClick={next} aria-label="Next">›</button>
