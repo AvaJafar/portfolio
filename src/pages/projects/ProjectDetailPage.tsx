@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { projects, getProjectBySlug } from './data';
 import { isProjectsUnlocked } from './projectAuth';
+import GallerySection from './GallerySection';
 import './ProjectDetailPage.css';
 
 const ProjectDetailPage: React.FC = () => {
@@ -136,6 +137,16 @@ const ProjectDetailPage: React.FC = () => {
           )}
 
           {project.context && <p className="project-detail-context">{project.context}</p>}
+        </div>
+      )}
+
+      {project.gallery && (
+        <div className="project-detail-section">
+          <div className="project-detail-section-label">
+            In The Wild
+            <div className="project-detail-rule" />
+          </div>
+          <GallerySection gallery={project.gallery} />
         </div>
       )}
 

@@ -30,6 +30,12 @@ export interface LinkItem {
   url: string;
 }
 
+export interface GalleryBlock {
+  images: string[];
+  caption?: string;
+  style?: 'default' | 'iphone';
+}
+
 export interface ProjectItem {
   slug: string;
   title: string;
@@ -40,6 +46,7 @@ export interface ProjectItem {
   cardImage: string;
   heroImage: string;
   heroDriveVideoId?: string;
+  gallery?: GalleryBlock;
   intro: string;
   challenge?: string;
   approachStatement?: string;
@@ -95,6 +102,7 @@ export const projects: ProjectItem[] = [
     category: 'Entertainment & Culture',
     cardImage: 'https://i.imgur.com/WRV83mM.jpeg',
     heroImage: 'https://i.imgur.com/WRV83mM.jpeg',
+    heroDriveVideoId: '1tKFiKMRbDStNuBri54rnMP5Ti4NGi9bR',
     intro: "Turning Olympic access into content that felt like Megan's own, not borrowed sports coverage.",
     challenge: "NBCUniversal had the access and authority of the Olympics. Megan had the audience and cultural influence. The opportunity was to connect the two without making Olympic coverage feel like an ad or forcing Megan into the role of a traditional sports correspondent. With her Olympics content living exclusively on her 7.3M-subscriber YouTube channel, the strategy was to make the Games feel native to her audience rather than asking her audience to adapt to the Olympics.",
     approachStatement: 'Arrive as a fan, not a celebrity.',
@@ -129,6 +137,21 @@ export const projects: ProjectItem[] = [
     category: 'Entertainment & Culture',
     cardImage: 'https://i.imgur.com/zILcgwM.jpeg',
     heroImage: 'https://i.imgur.com/zILcgwM.jpeg',
+    heroDriveVideoId: '1lLwpRdP-ArK2SayZfl4jjaoIwwLxHatM',
+    gallery: {
+      style: 'default',
+      caption: 'Brooklyn & Manhattan pop-up activations',
+      images: [
+        '/media/jay-z30/popup-1.jpg',
+        '/media/jay-z30/popup-2.jpg',
+        '/media/jay-z30/popup-3.jpg',
+        '/media/jay-z30/popup-4.jpg',
+        '/media/jay-z30/popup-5.jpg',
+        '/media/jay-z30/popup-6.jpg',
+        '/media/jay-z30/popup-7.jpg',
+        '/media/jay-z30/popup-8.jpg'
+      ]
+    },
     intro: 'Thirty years of catalog, told as one cohesive citywide narrative instead of scattered nostalgia.',
     challenge: "JAY-Z didn't need a comeback. He needed a cultural moment. Thirty years after Reasonable Doubt and 25 years after The Blueprint, JAŸ-Z30 had to make a legacy celebration feel relevant beyond nostalgia. With a citywide physical program building toward the Yankee Stadium shows, the digital strategy needed to turn dozens of disconnected moments across New York into one cohesive narrative, while translating a 30-year catalog for both longtime fans and a generation that discovered JAY-Z long after the albums were released.",
     owned: [
@@ -155,6 +178,7 @@ export const projects: ProjectItem[] = [
     category: 'Brand Partnerships',
     cardImage: 'https://i.imgur.com/SuoT3dI.png',
     heroImage: 'https://i.imgur.com/SuoT3dI.png',
+    heroDriveVideoId: '1HhrXxTgm8KZp_jX_p-QM5YAqXlSJ3Idn',
     intro: "Scaling Hot Girl Summer from a swimwear drop into a lifestyle collection, without losing what made it resonate.",
     challenge: "Following the debut 2025 collection, Walmart returned for a second Hot Girl Summer collaboration with a bigger ambition: move the idea beyond a women's swimwear drop and build it into a broader lifestyle proposition. The 2026 collection expanded into men's swimwear and pet apparel, transforming Hot Girl Summer from something you could wear into something the whole Hot Girl Universe could participate in.",
     approachStatement: 'Scale without dilution.',
@@ -217,6 +241,7 @@ export const projects: ProjectItem[] = [
     category: 'Brand Partnerships',
     cardImage: 'https://i.imgur.com/sbXcPS4.png',
     heroImage: 'https://i.imgur.com/sbXcPS4.png',
+    heroDriveVideoId: '1h8Jfg6y0ENDYyTi-sNeSNkmcwScMxJcd',
     intro: "Turning a flavor's comeback into a music video people sought out and shared.",
     challenge: "Cheetos Flamin' Hot Dill Pickle had become the fastest-selling limited-edition flavor in the brand's history, creating strong consumer demand for its return. The challenge was to turn that fan demand into a cultural moment worthy of a permanent comeback, without relying on the scarcity that had originally fueled the hype.",
     approachStatement: 'Entertainment over announcement.',
@@ -246,6 +271,7 @@ export const projects: ProjectItem[] = [
     category: 'Brand Partnerships',
     cardImage: 'https://i.imgur.com/gkFXRbr.jpeg',
     heroImage: 'https://i.imgur.com/gkFXRbr.jpeg',
+    heroDriveVideoId: '1O6EPWzsKnijVW3s0LWiHelbqzh8tqRFZ',
     intro: "Using Megan's song \"Body\" to launch NYX's first move from face to body care.",
     challenge: "NYX had built its identity around face artistry. Caramelt Mami marked the brand's first expansion from face to body in its 27-year history, making the challenge bigger than introducing a new product: NYX had to establish body care as a natural extension of its artistry and self-expression.",
     approachStatement: 'Turn a song into a category launch.',
@@ -274,6 +300,7 @@ export const projects: ProjectItem[] = [
     category: 'Consumer Brands',
     cardImage: 'https://i.imgur.com/ACS7xzB.jpeg',
     heroImage: 'https://i.imgur.com/ACS7xzB.jpeg',
+    heroDriveVideoId: '1kIMc3mdvSFIPmAocIGPoxQOI0JBUvBgS',
     intro: 'Introducing a UK oral care brand to the US, and turning a single skinny CVS test tower into national retail placement.',
     challenge: 'Ordo was a UK-based oral care brand with no US presence entering a category dominated by Colgate, Oral-B, and Crest. CVS gave them a skinny sales tower for holiday 2024 as a test rather than shelf space. The brand had to prove sell-through fast enough to earn real placement, in a category where the purchase decision belongs to a parent but the demand has to come from a child.',
     approachStatement: 'Speak to the child. Give the parent a reason to say yes.',
@@ -314,8 +341,9 @@ export const projects: ProjectItem[] = [
     role: 'Head Strategist',
     timeframe: 'Ongoing',
     category: 'Consumer Brands',
-    cardImage: 'https://i.imgur.com/Ox6u0uq.png',
-    heroImage: 'https://i.imgur.com/Ox6u0uq.png',
+    cardImage: 'https://i.imgur.com/7Pk2g2P.png',
+    heroImage: 'https://i.imgur.com/7Pk2g2P.png',
+    heroDriveVideoId: '1hsue-Jkyn0Zoz2UBCM21VOZolp4VZZvm',
     intro: 'Evolving a celebrity-backed tequila into a standalone lifestyle brand with its own identity.',
     challenge: 'Chicas Divertidas entered the premium tequila market alongside established celebrity-backed brands including Casamigos, Teremana, and 818 Tequila. After the first year, the challenge was to build Chicas into a standalone brand beyond Megan Thee Stallion.',
     approachStatement: 'A lifestyle brand, not a celebrity product.',
@@ -340,13 +368,28 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: 'vs-pink',
-    title: "Victoria's Secret PINK x Van Leeuwen",
+    title: "Victoria's Secret PINK",
     org: 'Collab x Collab',
     role: 'Creative Strategist',
     timeframe: 'January 30, 2025',
     category: 'Consumer Brands',
     cardImage: 'https://i.imgur.com/cwgHUq3.png',
-    heroImage: 'https://i.imgur.com/cwgHUq3.png',
+    heroImage: '/media/vs-pink/hero.jpg',
+    gallery: {
+      style: 'iphone',
+      caption: 'The Van Leeuwen partnership, as it played out on Instagram',
+      images: [
+        '/media/vs-pink/ig-1.jpg',
+        '/media/vs-pink/ig-2.jpg',
+        '/media/vs-pink/ig-3.jpg',
+        '/media/vs-pink/ig-4.jpg',
+        '/media/vs-pink/ig-5.jpg',
+        '/media/vs-pink/ig-6.jpg',
+        '/media/vs-pink/ig-7.jpg',
+        '/media/vs-pink/ig-8.jpg',
+        '/media/vs-pink/ig-9.jpg'
+      ]
+    },
     intro: "Turning a Tribeca ice cream shop into a Valentine's Day destination built for Gen Z discovery.",
     challenge: "PINK needed a culturally relevant partner to create a Valentine's Day moment that felt native to Gen Z and gave its creator-led product story a real-world expression.",
     approachStatement: 'Turn an ice cream shop into a destination.',
@@ -375,6 +418,7 @@ export const projects: ProjectItem[] = [
     category: 'Social Impact & Organizations',
     cardImage: 'https://i.imgur.com/LjFRjnc.png',
     heroImage: 'https://i.imgur.com/LjFRjnc.png',
+    heroDriveVideoId: '1vlJbKsvUQtyZMaZI9G0KCXlCr7DMCLcm',
     intro: 'Moving caregiving from a private family issue into national public conversation and policy momentum.',
     challenge: 'Millions of Americans provide unpaid care for family members, but the issue stays private, fragmented, and absent from public conversation.',
     approachStatement: 'Make caregiving a national issue, not a private one.',
@@ -407,7 +451,7 @@ export const projects: ProjectItem[] = [
     timeframe: 'Launched on Megan Thee Stallion Day',
     category: 'Social Impact & Organizations',
     cardImage: 'https://i.imgur.com/Yl9h3GL.png',
-    heroImage: 'https://i.imgur.com/Yl9h3GL.png',
+    heroImage: '/media/pete-thomas/hero.jpg',
     intro: 'Turning a home-repair philanthropy investment into a story fans could participate in, not just watch.',
     challenge: "The Pete & Thomas Foundation needed to turn a philanthropic investment in Houston and Dallas into a story that could resonate beyond the homes being renovated. Partnering with Habitat for Humanity's Aging in Place program, the initiative provided critical repairs and safety upgrades for senior homeowners. The communications challenge was making the work feel personal, culturally relevant, and connected to Megan's broader commitment to her communities.",
     approachStatement: 'Make philanthropy something fans do, not just watch.',
@@ -469,6 +513,7 @@ export const projects: ProjectItem[] = [
     category: 'Social Impact & Organizations',
     cardImage: 'https://i.imgur.com/f76r98N.png',
     heroImage: 'https://i.imgur.com/f76r98N.png',
+    heroDriveVideoId: '1DVNsYbh_z8GcFSSux5TpNw5HR1KlcDEN',
     intro: 'Translating complex impact-investing models into stories investors, policymakers, and the public could feel.',
     challenge: 'NESsT needed to make impact investing feel credible, measurable, and human. In a crowded space where organizations increasingly made claims about social impact, NESsT had to prove that capital could create measurable economic opportunity for underrepresented communities.',
     approachStatement: 'Translate financial models into human stories.',
@@ -492,8 +537,8 @@ export const projects: ProjectItem[] = [
     role: 'Co-Founder & CEO',
     timeframe: 'Founded February 2026',
     category: 'Tech & Platform',
-    cardImage: 'https://i.imgur.com/wGAPT7R.png',
-    heroImage: 'https://i.imgur.com/wGAPT7R.png',
+    cardImage: 'https://i.imgur.com/zKNLHlS.png',
+    heroImage: 'https://i.imgur.com/zKNLHlS.png',
     intro: 'Building software that makes a manual, legally risky filing process simple and repeatable.',
     challenge: 'Public notification requirements in real estate approval processes are manual and legally consequential. A missed or improperly executed notice can invalidate an approval and restart the process.',
     approachStatement: 'Make notice-filing simple, accurate, repeatable.',

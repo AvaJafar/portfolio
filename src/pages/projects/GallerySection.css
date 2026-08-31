@@ -1,0 +1,193 @@
+@import './tokens.css';
+
+/* ---------- default gallery ---------- */
+
+.gallery-default-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.gallery-default-viewport {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-default-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--proj-bg-card);
+  border: 1px solid var(--proj-line);
+  overflow: hidden;
+}
+
+.gallery-default-image-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.gallery-default-image-wrap img.visible {
+  opacity: 1;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--proj-line-strong);
+  background: rgba(12, 11, 10, 0.6);
+  color: var(--proj-ink);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.gallery-nav:hover {
+  color: var(--proj-accent);
+  border-color: var(--proj-accent);
+}
+
+.gallery-nav.left {
+  left: 12px;
+}
+
+.gallery-nav.right {
+  right: 12px;
+}
+
+/* ---------- shared ---------- */
+
+.gallery-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.gallery-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--proj-line-strong);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-dots span.active {
+  background: var(--proj-accent);
+  transform: scale(1.3);
+}
+
+.gallery-caption {
+  font-family: var(--proj-ui);
+  font-size: 0.8rem;
+  color: var(--proj-ink-faint);
+  text-align: center;
+}
+
+/* ---------- iphone gallery ---------- */
+
+.gallery-iphone-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.iphone-frame {
+  position: relative;
+  width: 260px;
+  height: 540px;
+  background: #050505;
+  border-radius: 46px;
+  padding: 14px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06), 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.iphone-notch {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  background: #050505;
+  border-radius: 14px;
+  z-index: 3;
+}
+
+.iphone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000;
+}
+
+.iphone-screen img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.iphone-screen img.visible {
+  opacity: 1;
+}
+
+.iphone-home-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+
+.gallery-iphone-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.gallery-iphone-controls button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--proj-line-strong);
+  background: transparent;
+  color: var(--proj-ink);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.gallery-iphone-controls button:hover {
+  color: var(--proj-accent);
+  border-color: var(--proj-accent);
+}
+
+@media (max-width: 640px) {
+  .iphone-frame {
+    width: 220px;
+    height: 460px;
+  }
+}
