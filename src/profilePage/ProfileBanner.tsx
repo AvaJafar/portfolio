@@ -5,9 +5,9 @@ import MoreInfoButton from '../components/MoreInfoButton';
 const ProfileBanner: React.FC = () => {
   const resumeLink = "/AvaJafarmadar_Resume.pdf"; // Place your resume PDF in public folder
   const linkedinLink = "https://www.linkedin.com/in/avajafarmadar/";
-  const headline = "Digital Brand Strategist";
+  const headline = "Brand Strategist";
   const profileSummary =
-    "Ava Jafarmadar is a senior strategist who lives at the intersection of PR and digital, equally fluent in shaping a narrative and scaling it. She leads brand and content strategy for global talent and category-defining companies, building the kind of work that earns the headline and the algorithm. With a foundation in earned media and a command of social, creative, and culture, she brings a rare full-stack perspective: she can identify the story, build the plan, direct the execution, and measure what moved. Always five steps ahead, rarely playing it safe, and never, ever off-brand.";
+    "Brand strategist who helps brands figure out what they stand for, what they have to say, and why people should care. I've set platform strategy for a global recording artist, built brand partnership strategy behind a national retail launch, and positioned tech and B2B products for audiences that didn't understand them yet. Different categories, same job: find the human truth, turn it into a point of view, and show people why it matters.";
   const handlePlayClick = () => {
     window.open(resumeLink, '_blank');
   };
