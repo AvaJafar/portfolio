@@ -376,13 +376,13 @@ export const projects: ProjectItem[] = [
     title: "Victoria's Secret PINK",
     org: 'Collab x Collab',
     role: 'Creative Strategist',
-    timeframe: 'January 30, 2025',
+    timeframe: 'January – August 2025',
     category: 'Consumer Brands',
     cardImage: 'https://i.imgur.com/cwgHUq3.png',
     heroImage: '/media/vs-pink/hero.jpg',
     gallery: {
       style: 'iphone',
-      caption: 'The Van Leeuwen partnership, as it played out on Instagram',
+      caption: 'PINK x Van Leeuwen — the launch that set the format Pink’s Hot Dogs and LoveShackFancy later repeated',
       images: [
         { src: '/media/vs-pink/ig-1.jpg' },
         { src: '/media/vs-pink/ig-2.jpg' },
@@ -395,21 +395,27 @@ export const projects: ProjectItem[] = [
         { src: '/media/vs-pink/ig-9.jpg' }
       ]
     },
-    intro: "Turning a Tribeca ice cream shop into a Valentine's Day destination built for Gen Z discovery.",
-    challenge: "PINK needed a culturally relevant partner to create a Valentine's Day moment that felt native to Gen Z and gave its creator-led product story a real-world expression.",
-    approachStatement: 'Turn an ice cream shop into a destination.',
-    approachBody: 'Instead of a traditional retail activation, transform a popular Tribeca ice cream shop into a temporary PINK destination — an unexpected, social-first experience Gen Z could discover, participate in, and share.',
+    intro: 'Turning a one-off ice cream shop takeover into a repeatable collaboration format PINK ran three times.',
+    challenge: 'PINK needed culturally relevant partners who could create moments that felt native to Gen Z and gave its creator-led product story a real-world expression — repeatably, not as a one-off.',
+    approachStatement: 'Build the format once. Run it again and again.',
+    approachBody: 'Instead of a single retail activation, identify and pitch a takeover format that could travel: partner with a beloved, unexpected New York institution, transform it into a temporary PINK destination, and let Gen Z discover, participate in, and share it. Proved the model with Van Leeuwen, then repeated it with Pink’s Hot Dogs and LoveShackFancy.',
     owned: [
-      'Sourced the brand partnership and pitched it to VS PINK',
-      "Cultural and social strategy connecting the physical activation to PINK's creator-led collection",
-      'On-site activation support and content opportunities',
-      'Themed product integration into the collaboration'
+      'Identified and pitched all three retail partnerships — Van Leeuwen, Pink’s Hot Dogs, and LoveShackFancy — to VS PINK',
+      'Built the repeatable takeover format after Van Leeuwen proved the model, then adapted it for each new partner',
+      "Cultural and social strategy connecting each physical activation to PINK's creator-led collection",
+      'On-site activation support and content opportunities across all three collaborations',
+      'Themed product integration into each collaboration'
     ],
     metrics: [
-      { value: '1.5M+', label: 'Combined creator reach', sub: 'Halley Kate & Jazzmeen', feature: true },
-      { value: '2,000+', label: 'Pop-up guests' }
+      { value: '98.7K', label: 'Likes across 6 posts — PINK x LoveShackFancy', feature: true },
+      { value: '27,013', label: 'Likes across 5 posts — PINK x Pink’s Hot Dogs' },
+      { value: '6,917', label: 'Likes across 4 posts — PINK x Van Leeuwen' }
     ],
-    notes: ['The format became a template — PINK ran a LoveShackFancy pop-up on the same model in August 2025'],
+    notes: [
+      'Average likes per post roughly tripled collaboration over collaboration: ~1,729 (Van Leeuwen) → ~5,403 (Pink’s Hot Dogs) → ~16,450 (LoveShackFancy)',
+      'Creators Halley Kate and Jazzmeen activated a combined 1.5M+ Gen Z and Millennial followers across TikTok and Instagram for the Van Leeuwen launch',
+      'Over 2,000 guests attended the original Van Leeuwen pop-up'
+    ],
     context: "PINK's parent business reported a 15% net sales increase to $1.6 billion in early 2026, driven by growth in physical and digital customer traffic.",
     press: [],
     links: []
