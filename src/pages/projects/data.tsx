@@ -77,8 +77,8 @@ export const projects: ProjectItem[] = [
     heroDriveVideoId: '1Jyh_6265Eur84T4CRO6Kb2nwbVq-eS1k',
     intro: "A historic casting announcement, turned into ticket demand in Moulin Rouge!'s final months on Broadway.",
     challenge: "Moulin Rouge! The Musical announced it was closing after seven years on Broadway. The challenge: turn a historic casting announcement into ticket demand, reaching beyond Broadway's traditional audience in the show's final months.",
-    approachStatement: 'Lead with the historic-first framing.',
-    approachBody: "The casting came with two built-in cultural hooks: a historic gender-swapped portrayal of Zidler, the first by a female-identifying performer in any Moulin Rouge! production worldwide, and a timely announcement at the start of International Women's Month. I story-mined the casting for the angles that would carry outside the theater press and led with the historic-first framing.",
+    approachStatement: 'Historic-first framing & audience expansion',
+    approachBody: "The casting came with two built-in cultural hooks: a historic gender-swapped portrayal of Zidler, the first female-identifying performer to take on the role in any Moulin Rouge! production worldwide, and an opportunity to introduce the musical to audiences beyond its traditional theater base through Megan Thee Stallion's fan community. I story-mined both angles to identify narratives that could travel beyond theater press, using the historic first to drive cultural conversation and Megan's crossover appeal to bring new audiences into the world of the musical.",
     owned: [
       'Story-mining the casting for angles that would carry beyond theater press',
       'Announcement sequencing across owned, talent, and partner channels',
@@ -123,7 +123,7 @@ export const projects: ProjectItem[] = [
       { value: '54', label: 'Pieces published in 5 days', sub: '19 Shorts · 4 long-form · 15 IG · 6 TikTok · 10 X', feature: true },
       { value: '7.3M', label: "Engagements on Megan's channels" },
       { value: '71M', label: "Impressions on Megan's channels" },
-      { value: '~64.9K', label: 'New followers in one week' }
+      { value: '64.9K', label: 'New followers in one week' }
     ],
     notes: [
       '29K mentions and 157M topic reach across the broader Milan conversation',
