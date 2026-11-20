@@ -1,9 +1,17 @@
 import React from 'react';
 import './Certifications.css';
 import { FaExternalLinkAlt, FaUniversity } from 'react-icons/fa';
-import { SiCoursera } from 'react-icons/si';
+import { SiCoursera, SiGoogle } from 'react-icons/si';
 
 const certifications = [
+  {
+    title: "Capstone: Applying Project Management in the Real World",
+    issuer: "Google",
+    issuedDate: "October 2026",
+    icon: <SiGoogle />,
+    credentialId: "5IE2EFW3B98T",
+    link: "https://www.coursera.org/account/accomplishments/verify/5IE2EFW3B98T"
+  },
   {
     title: "Social Marketing Certification",
     issuer: "Hootsuite",
@@ -59,6 +67,7 @@ const Certifications: React.FC = () => {
             {cert.link && (
               <a
                 href={cert.link}
+                aria-label={`Verify ${cert.title}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="certification-link animated-icon"
